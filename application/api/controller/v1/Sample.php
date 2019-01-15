@@ -85,8 +85,9 @@ class Sample extends Controller
         $m = input('post.');
     }
 
-    public function test4()
+    public function test4($code)
     {
 //        Product::
+        var_dump($code);
     }
 }

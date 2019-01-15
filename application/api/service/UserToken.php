@@ -130,8 +130,7 @@ class UserToken extends Token
         $token = $this->saveToCache($cachedValue);
         return $token;
     }
-
-
+    
     private function prepareCachedValue($wxResult, $uid)
     {
         $cachedValue = $wxResult;

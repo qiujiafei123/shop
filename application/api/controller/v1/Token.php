@@ -17,11 +17,12 @@ use app\api\service\Token as TokenService;
 use app\api\validate\AppTokenGet;
 use app\api\validate\TokenGet;
 use app\lib\exception\ParameterException;
+use think\Controller;
 
 /**
  * 获取令牌，相当于登录
  */
-class Token
+class Token extends Controller
 {
     /**
      * 用户获取令牌（登陆）
@@ -29,7 +30,7 @@ class Token
      * @POST code
      * @note 虽然查询应该使用get，但为了稍微增强安全性，所以使用POST
      */
-    public function getToken($code='')
+    public function getToken($code = '')
     {
         (new TokenGet())->goCheck();
         $wx = new UserToken($code);
