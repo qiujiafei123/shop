@@ -13,11 +13,11 @@ use app\api\controller\BaseController;
 use app\api\validate\IDMustBePositiveInt;
 use app\api\model\Banner as BannerModel;
 use app\lib\exception\MissException;
-
+use think\Controller;
 /**
  * Banner资源
  */ 
-class Banner extends BaseController
+class Banner extends Controller
 {
 //    protected $beforeActionList = [
 //        'checkPrimaryScope' => ['only' => 'getBanner']
