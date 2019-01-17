@@ -103,7 +103,7 @@ class Product extends Controller
     {
         (new Count())->goCheck();
         $products = ProductModel::getMostRecent($count);
-        if ($products->isEmpty())
+        if (empty($products))
         {
 
         }

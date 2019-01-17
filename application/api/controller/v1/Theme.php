@@ -36,7 +36,7 @@ class Theme extends Controller
         $ids = explode(',', $ids);
         $result = ThemeModel::with('topicImg,headImg')->select($ids);
 //        $result = ThemeModel::getThemeList($ids);
-        if ($result->isEmpty()) {
+        if (empty($result)) {
             throw new ThemeException();
         }
 
