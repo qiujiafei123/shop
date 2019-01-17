@@ -54,6 +54,7 @@ class Category extends BaseController
      */
     public function getCategory($id)
     {
+        var_dump('222');die;
         $validate = new IDMustBePositiveInt();
         $validate->goCheck();
         $category = CategoryModel::getCategory($id);
