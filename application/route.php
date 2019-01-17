@@ -88,7 +88,8 @@ Route::post('api/:version/pay/concurrency', 'api/:version.Pay/notifyConcurrency'
 //Message
 Route::post('api/:version/message/delivery', 'api/:version.Message/sendDeliveryMsg');
 
-
+//UserInfo
+Route::post('api/:version/user/wx_info', 'api/:version.User/createOrUpdateUserInfo');
 
 //return [
 //        ':version/banner/[:location]' => 'api/:version.Banner/getBanner'

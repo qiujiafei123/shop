@@ -29,4 +29,14 @@ class User extends BaseModel
             ->find();
         return $user;
     }
+    
+    public static function updateUser($uid, $data)
+    {
+        $res=User::where('id', '=', $uid)->first();
+        if($res){
+            $res->save($data);
+        }else{
+            User::add($data);
+        }
+    }
 }
