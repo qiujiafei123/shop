@@ -59,8 +59,8 @@ class Order extends BaseController
         {
             throw new OrderException();
         }
-        return $orderDetail
-            ->hidden(['prepay_id']);
+        return $orderDetail;
+            //->hidden(['prepay_id']);
     }
 
     /**
@@ -85,11 +85,11 @@ class Order extends BaseController
 //        $collection = collection($pagingOrders->items());
 //        $data = $collection->hidden(['snap_items', 'snap_address'])
 //            ->toArray();
-        $data = $pagingOrders->hidden(['snap_items', 'snap_address'])
-            ->toArray();
+//        $data = $pagingOrders->hidden(['snap_items', 'snap_address'])
+//            ->toArray();
         return [
             'current_page' => $pagingOrders->currentPage(),
-            'data' => $data
+            'data' => $pagingOrders
         ];
 
     }
@@ -112,11 +112,11 @@ class Order extends BaseController
                 'data' => []
             ];
         }
-        $data = $pagingOrders->hidden(['snap_items', 'snap_address'])
-            ->toArray();
+//        $data = $pagingOrders->hidden(['snap_items', 'snap_address'])
+//            ->toArray();
         return [
             'current_page' => $pagingOrders->currentPage(),
-            'data' => $data
+            'data' => $pagingOrders
         ];
     }
 
