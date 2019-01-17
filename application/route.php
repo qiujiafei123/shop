@@ -31,7 +31,7 @@ Route::get('api/:version/banner/:id', 'api/:version.Banner/getBanner');
 //]);
 
 Route::group('api/:version/theme',function(){
-    Route::get('', 'api/:version.Theme/getSimpleList');
+    Route::get('/ids', 'api/:version.Theme/getSimpleList');
     Route::get('/:id', 'api/:version.Theme/getComplexOne');
     Route::post(':t_id/product/:p_id', 'api/:version.Theme/addThemeProduct');
     Route::delete(':t_id/product/:p_id', 'api/:version.Theme/deleteThemeProduct');
