@@ -174,9 +174,9 @@ class Order
             array_push($oPIDs, $item['product_id']);
         }
         // 为了避免循环查询数据库
-        $products = Product::all($oPIDs)
+        $products = Product::all($oPIDs);
         //    ->visible(['id', 'price', 'stock', 'name', 'main_img_url'])
-            ->toArray();
+        //    ->toArray();
         return $products;
     }
 
