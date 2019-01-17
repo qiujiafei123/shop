@@ -39,7 +39,7 @@ class Product extends Controller
         (new PagingParameter())->goCheck();
         $pagingProducts = ProductModel::getProductsByCategoryID(
             $id, true, $page, $size);
-        if ($pagingProducts->isEmpty())
+        if (empty($pagingProducts))
         {
             // 对于分页最好不要抛出MissException，客户端并不好处理
             return [
@@ -59,9 +59,9 @@ class Product extends Controller
         //            ->toArray();
 
 //        $collection = collection($pagingProducts->items());
-        $data = $pagingProducts
-            ->hidden(['summary'])
-            ->toArray();
+//        $data = $pagingProducts
+//            ->hidden(['summary'])
+//            ->toArray();
         // 如果是简洁分页模式，直接序列化$pagingProducts这个Paginator对象会报错
         //        $pagingProducts->data = $data;
         return [
@@ -82,14 +82,14 @@ class Product extends Controller
         (new IDMustBePositiveInt())->goCheck();
         $products = ProductModel::getProductsByCategoryID(
             $id, false);
-        if ($products->isEmpty())
+        if (empty($products))
         {
             throw new ThemeException();
         }
-        $data = $products
-            ->hidden(['summary'])
-            ->toArray();
-        return $data;
+//        $data = $products
+//            ->hidden(['summary'])
+//            ->toArray();
+        return $products;
     }
 
     /**
