@@ -107,11 +107,12 @@ class Product extends Controller
         {
 
         }
-        $products = $products->hidden(
-            [
-                'summary'
-            ])
-            ->toArray();
+        
+//        $products = $products->hidden(
+//            [
+//                'summary'
+//            ])
+//            ->toArray();
         return $products;
     }
 
