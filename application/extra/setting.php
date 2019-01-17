@@ -7,6 +7,6 @@
  */
 
 return [
-    'img_prefix' => 'https://www.51fafafa.cn',
+    'img_prefix' => 'https://www.51fafafa.cn/images',
     'token_expire_in' => 7200
 ];
