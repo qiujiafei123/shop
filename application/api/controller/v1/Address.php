@@ -37,12 +37,12 @@ class Address extends BaseController
         $uid = Token::getCurrentUid();
         $userAddress = UserAddress::where('user_id', $uid)
             ->find();
-        if(!$userAddress){
-            throw new UserException([
-               'msg' => '用户地址不存在',
-                'errorCode' => 60001
-            ]);
-        }
+//        if(!$userAddress){
+//            throw new UserException([
+//               'msg' => '用户地址不存在',
+//                'errorCode' => 60001
+//            ]);
+//        }
         return $userAddress;
     }
 
